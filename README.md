@@ -24,13 +24,15 @@ node index.js
 
 三、使用文件上传需要引入两种资源：JS, CSS。
 jquery引用说明：jquery版本在【1.7.2+】  到 【3.5.1】 都可以。一般项目中都已经引用了jquery，如果项目中的jquery可以正常使用的话，则不需要另外引用jquery或者改jquery引用版本。
-
+``` javascript
 // 头部引入资源
 <!--引入JS&CSS：jquery可引入其他版本，或引入本地版本-->
 <script type="text/javascript" src="//lib.baomitu.com/jquery/2.2.4/jquery.min.js"></script>
 <link rel="stylesheet" href="./iu-assets/iu-css.css">
+```
 
 四、主页面结构：
+``` javascript
 <div class="iu-module">
     <div class="iu-btns">
         <div id="picker" class="iu-choose-btn">
@@ -43,8 +45,9 @@ jquery引用说明：jquery版本在【1.7.2+】  到 【3.5.1】 都可以。�
     </ul>
 </div>
 <script src="./iu-assets/iu-source.js"></script>
-
+```
 上传类对象：
+``` javascript
 var uploader = new IUploader({
     $picker: $('#picker'), // 选择文件的按钮的jquery对象【必需】
     $list: $('#iu-list'), // 展示的文件列表的jquery对象【必需】
@@ -94,7 +97,7 @@ var uploader = new IUploader({
  
 // 动态修改接口路径
 // uploader.changeServer('xxxxx');
-
+```
 
 IUploader使用的参数说明：
 $picker  {Object} [必选]  →  指定选择文件的按钮容器的jquery对象。
@@ -126,9 +129,10 @@ deleteCallback
 删除文件的时候的回调函数，可做扩展。
 
 另外提供一个可动态修改接口路径的方法：
+``` javascript
 // 动态修改接口路径
 uploader.changeServer('xxxxx');
-
+```
 
 五、demo中的iu-source.js方法（主要代码：如下）：
 上传限制的提示语及显示方法可在beforeUpload中修改
