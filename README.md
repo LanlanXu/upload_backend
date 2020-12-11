@@ -130,5 +130,5 @@ uploader.changeServer('xxxxx');
 ```
 
 ## 五、demo中的iu-source.js方法：
-上传限制的提示语及显示方法可在beforeUpload中修改
-对接口返回数据需要做些通用的处理的话，在upComplete中的JSON.parse(res)这个地方可先对res进行一些处理
+- 上传限制的提示语及显示方法可在beforeUpload中修改
+- 对接口返回数据需要做些通用的处理的话，在upComplete中的JSON.parse(res)这个地方可先对res进行一些处理
