@@ -1,0 +1,184 @@
+.iu-module {
+  font-size: 0;
+  font-family: 'microsoft yahei';
+}
+.iu-module .iu-btns {
+  padding-bottom: 2px;
+}
+.iu-module .iu-btns .iu-choose-btn {
+  font-size: 14px;
+  width: 104px;
+  height: 30px;
+  color: #606266;
+  border: 1px solid #F3F4F7;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  -moz-border-radius: 3px;
+  line-height: 30px;
+  display: inline-block;
+  margin-right: 8px;
+  position: relative;
+}
+.iu-module .iu-btns .iu-choose-btn.disable {
+  background-color: #f6f6f6;
+}
+.iu-module .iu-btns .iu-choose-btn.disable::after {
+  content: ' ';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 104px;
+  height: 30px;
+  background-color: red;
+  opacity: 0;
+  z-index: 999;
+  cursor: not-allowed;
+}
+.iu-module .iu-btns .iu-choose-btn label {
+  padding: 0 12px 0 36px;
+  background: url(upload.png) 12px 6px no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.iu-module .iu-btns .iu-choose-btn .iu-wrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.iu-module .iu-btns .iu-choose-btn .iu-wrap.hide {
+  display: none;
+}
+.iu-module .iu-btns .iu-choose-btn .iu-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: none;
+}
+.iu-module .iu-btns .iu-choose-btn .iu-wrap form {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.iu-module .iu-btns .iu-choose-btn .iu-wrap form input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.iu-module .iu-btns .iu-choose-btn .iu-wrap.new {
+  z-index: 2;
+}
+.iu-module .iu-btns .iu-upload-btn {
+  font-size: 14px;
+  color: #fff;
+  border: 1px solid #409eff;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  -moz-border-radius: 3px;
+  line-height: 30px;
+  display: inline-block;
+  background: #409eff;
+  padding: 0 12px;
+  margin-right: 8px;
+  cursor: default;
+  vertical-align: top;
+}
+.iu-module .iu-btns .iu-remark {
+  font-size: 12px;
+  color: #909399;
+  font-style: normal;
+  display: inline-block;
+  line-height: 16px;
+  padding: 4px 0;
+  margin-top: 4px;
+  vertical-align: top;
+}
+.iu-module .iu-list {
+  padding: 0;
+  margin-top: 12px;
+}
+.iu-module .iu-list li {
+  background: #FAFAFA;
+  list-style: none;
+  width: 100%;
+  max-width: 240px;
+  padding: 10px 10px 11px 11px;
+  margin: 8px 8px 0 0;
+  display: inline-block;
+  position: relative;
+}
+.iu-module .iu-list li h3 {
+  width: 100%;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: normal;
+  color: #303133;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  margin: 0;
+}
+.iu-module .iu-list li h3.wid-80 {
+  width: 80%;
+}
+.iu-module .iu-list li .iu-des {
+  padding-top: 6px;
+}
+.iu-module .iu-list li .iu-des .iu-size {
+  font-size: 12px;
+  color: #909399;
+  line-height: 20px;
+  padding-right: 9px;
+  vertical-align: -1px;
+}
+.iu-module .iu-list li .iu-des .iu-status {
+  font-size: 12px;
+  color: #fff;
+  padding: 0 5px 0 4px;
+  height: 18px;
+  line-height: 17px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  -moz-border-radius: 3px;
+}
+.iu-module .iu-list li .iu-des .hide {
+  display: none;
+}
+.iu-module .iu-list li .iu-des .iu-finish {
+  background: #65DCC3;
+}
+.iu-module .iu-list li .iu-des .iu-uploading {
+  background: #7AB6F8;
+}
+.iu-module .iu-list li .iu-des .iu-fail {
+  background: #FD8886;
+}
+.iu-module .iu-list li .iu-delete {
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 11px;
+  width: 26px;
+  height: 26px;
+  background: url(delete.png) no-repeat center;
+  cursor: pointer;
+}
+.iu-module .iu-list li .iu-delete.hide {
+  display: none;
+}

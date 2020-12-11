@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上传组件-非前后端分离</title>
+    <!--引入JS&CSS-->
+    <script type="text/javascript" src="//lib.baomitu.com/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="./iu-assets/iu-css.css">
+</head>
+
+<body>
+    <div class="iu-module">
+        <div class="iu-btns">
+            <div id="picker" class="iu-choose-btn">
+                <label>选择文件</label>
+            </div>
+            <i class="iu-remark">支持文件格式：xxxx\xxxxx\xxx，单个文件大小不超过xxxxkb。</i>
+        </div>
+        <!--用来存放文件信息-->
+        <ul id="iu-list" class="iu-list">
+        </ul>
+    </div>
+    <script src="./iu-assets/iu-source.js"></script>
+    <script>
+        var uploader = new IUploader({
+            $picker: $('#picker'), // 选择文件的按钮的jquery对象【必需】
+            $list: $('#iu-list'), // 展示的文件列表的jquery对象【必需】
+            // accept: { // 允许上传的类型【非必需：默认无类型限制】
+            //     extensions: 'gif,jpg,jpeg,bmp,png', // 检测类型
+            //     mimeTypes: 'image/*' // 选择框中的过滤类型
+            // },
+            canDelete: true, // 是否可以删除【非必需：默认不可删除】
+            // fileSingleSizeLimit: '40000', // 允许上传的单个文件的大小，单位：字节【非必需：默认无大小限制】
+            allowNum: 4,  // 允许上传文件的个数【非必需：默认无数量限制】
+            server: '/upload.do?action=uploadFile', // 后台上传接口【必需】
+            /**
+             * 成功的条件【必需】
+             * @param {接口返回对象} response 
+             */
+            successOption: function (response) {
+                return response.state === 'SUCCESS'
+            },
+            /**
+             * 成功的回调函数【非必需】
+             * @param {接口返回对象} response 
+             */
+            uploadCallback: function (response) {
+                console.log(response)
+            },
+            /**
+             * 失败的回调函数【非必需】
+             * @param {接口返回对象} response 
+             */
+            errorCallback: function (response) {
+                console.log(response)
+            },
+            /**
+             * 删除的回调函数【非必需：默认直接移除展示文件】
+             * @param {附件id} id 
+             */
+            deleteCallback: function (id) {
+                console.log(id)
+                var _this = this;
+                setTimeout(function () {
+                    // 必需要：要执行页面展示文件删除
+                    _this.deleteItem(id);
+                }, 1000);
+            }
+        });
+
+        // 动态修改接口路径
+        // uploader.changeServer('xxxxx');
+
+    </script>
+</body>
+
+</html>

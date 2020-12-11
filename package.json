@@ -1,0 +1,11 @@
+{
+  "name": "webuploader-module",
+  "version": "1.0",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "devDependencies": {
+    "express": "^4.17.1",
+    "formidable": "^1.2.2"
+  }
+}
