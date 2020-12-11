@@ -1,28 +1,29 @@
 ## 上传组件——前后端不分离 简介参考下面地址：
 1、效果如图所示（仅支持一次一个上传；选择即马上上传）：【此demo兼容ie9-11；上传接口的响应头中的'Content-type'请设置为'text/html;charset=utf-8'】
-一、下载文件及运行demo：
-上传组件带简单接口的完整测试包文件见附件【upload_backend.zip】，目录结构如下：
-│ index.js     // nodejs编写的服务器及后台上传接口
-│ package.json     // 依赖文件记录
-├─upload_images    // 上传的文件存储的位置
-├─demo     // uploader 组件（主要组件代码）
+## 一、下载文件及运行demo：
+上传组件带简单接口的完整测试包文件见附件【upload_backend.zip】，目录结构如下：  
+│ index.js     // nodejs编写的服务器及后台上传接口  
+│ package.json     // 依赖文件记录  
+├─upload_images    // 上传的文件存储的位置  
+├─demo     // uploader 组件（主要组件代码）  
 
-请下载附件后，在文件夹根目录运行以下命令（请先安装node.js）：
-npm install
-node index.js
+请下载附件后，在文件夹根目录运行以下命令（请先安装node.js）：  
+- npm install  
+- node index.js  
 然后浏览器中    【<本电脑ip>:3111】   访问。
-二、主要的demo目录结构如下：
-├─demo
-│ │ index.html     // 页面
-│ │
-│ └─iu-assets     // 相关资源
-│ delete.png
-│ iu-css.css     // less编译后的组件样式
-│ iu-css.less     // less的组件样式
-│ iu-source.js      // 组件js
-│ upload.png
 
-三、使用文件上传需要引入两种资源：JS, CSS。
+## 二、主要的demo目录结构如下：
+├─demo  
+│ │ index.html     // 页面  
+│ │  
+│ └─iu-assets     // 相关资源  
+│ delete.png  
+│ iu-css.css     // less编译后的组件样式  
+│ iu-css.less     // less的组件样式  
+│ iu-source.js      // 组件js  
+│ upload.png  
+
+## 三、使用文件上传需要引入两种资源：JS, CSS。
 jquery引用说明：jquery版本在【1.7.2+】  到 【3.5.1】 都可以。一般项目中都已经引用了jquery，如果项目中的jquery可以正常使用的话，则不需要另外引用jquery或者改jquery引用版本。
 ``` javascript
 // 头部引入资源
@@ -31,7 +32,7 @@ jquery引用说明：jquery版本在【1.7.2+】  到 【3.5.1】 都可以。�
 <link rel="stylesheet" href="./iu-assets/iu-css.css">
 ```
 
-四、主页面结构：
+## 四、主页面结构：
 ``` javascript
 <div class="iu-module">
     <div class="iu-btns">
@@ -46,7 +47,7 @@ jquery引用说明：jquery版本在【1.7.2+】  到 【3.5.1】 都可以。�
 </div>
 <script src="./iu-assets/iu-source.js"></script>
 ```
-上传类对象：
+## 上传类对象：
 ``` javascript
 var uploader = new IUploader({
     $picker: $('#picker'), // 选择文件的按钮的jquery对象【必需】
@@ -99,16 +100,16 @@ var uploader = new IUploader({
 // uploader.changeServer('xxxxx');
 ```
 
-IUploader使用的参数说明：
-$picker  {Object} [必选]  →  指定选择文件的按钮容器的jquery对象。
-$list  {Object} [必选]   → 展示的文件列表的jquery对象。
-accept  {Object} [可选] [默认值：null]  →  指定接受哪些类型的文件。 由于目前还有ext转mimeType表，所以这里需要分开指定。
-extensions {String}  →  允许的文件后缀，不带点，多个用逗号分割。
-mimeTypes {String}  →  多个用逗号分割。
-canDelete  {Boolean}[可选] [默认值：undefined]  →  上传的文件是否可以删除（true的话，文件上传成功后会显示删除图标）。
-fileSingleSizeLimit   {int} [可选] [默认值：undefined]  →  验证单个文件大小是否超出限制, 超出则不允许加入队列。（其中ie9中文件大小前端限制不了，需要后端接口做限制）
-allowNum  {Boolean}[可选] [默认值：undefined]  →  允许上传的文件个数，上传的失败的文件会自动移除，移除后不算作内。
-server  {String}[必选]   →  后台上传接口，默认是post方法。
+IUploader使用的参数说明：  
+$picker  {Object} [必选]  →  指定选择文件的按钮容器的jquery对象。  
+$list  {Object} [必选]   → 展示的文件列表的jquery对象。  
+accept  {Object} [可选] [默认值：null]  →  指定接受哪些类型的文件。 由于目前还有ext转mimeType表，所以这里需要分开指定。  
+extensions {String}  →  允许的文件后缀，不带点，多个用逗号分割。  
+mimeTypes {String}  →  多个用逗号分割。  
+canDelete  {Boolean}[可选] [默认值：undefined]  →  上传的文件是否可以删除（true的话，文件上传成功后会显示删除图标）。  
+fileSingleSizeLimit   {int} [可选] [默认值：undefined]  →  验证单个文件大小是否超出限制, 超出则不允许加入队列。（其中ie9中文件大小前端限制不了，需要后端接口做限制）  
+allowNum  {Boolean}[可选] [默认值：undefined]  →  允许上传的文件个数，上传的失败的文件会自动移除，移除后不算作内。  
+server  {String}[必选]   →  后台上传接口，默认是post方法。  
 
 
 IUploader传入的函数说明：
@@ -134,6 +135,6 @@ deleteCallback
 uploader.changeServer('xxxxx');
 ```
 
-五、demo中的iu-source.js方法（主要代码：如下）：
+## 五、demo中的iu-source.js方法：
 上传限制的提示语及显示方法可在beforeUpload中修改
 对接口返回数据需要做些通用的处理的话，在upComplete中的JSON.parse(res)这个地方可先对res进行一些处理
