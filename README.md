@@ -101,33 +101,25 @@ var uploader = new IUploader({
 ```
 
 IUploader使用的参数说明：  
-$picker  {Object} [必选]  →  指定选择文件的按钮容器的jquery对象。  
-$list  {Object} [必选]   → 展示的文件列表的jquery对象。  
-accept  {Object} [可选] [默认值：null]  →  指定接受哪些类型的文件。 由于目前还有ext转mimeType表，所以这里需要分开指定。  
-extensions {String}  →  允许的文件后缀，不带点，多个用逗号分割。  
-mimeTypes {String}  →  多个用逗号分割。  
-canDelete  {Boolean}[可选] [默认值：undefined]  →  上传的文件是否可以删除（true的话，文件上传成功后会显示删除图标）。  
-fileSingleSizeLimit   {int} [可选] [默认值：undefined]  →  验证单个文件大小是否超出限制, 超出则不允许加入队列。（其中ie9中文件大小前端限制不了，需要后端接口做限制）  
-allowNum  {Boolean}[可选] [默认值：undefined]  →  允许上传的文件个数，上传的失败的文件会自动移除，移除后不算作内。  
-server  {String}[必选]   →  后台上传接口，默认是post方法。  
+- **$picker**  {Object} [必选]  →  指定选择文件的按钮容器的jquery对象。  
+- **$list**  {Object} [必选]   → 展示的文件列表的jquery对象。  
+- **accept**  {Object} [可选] [默认值：null]  →  指定接受哪些类型的文件。 由于目前还有ext转mimeType表，所以这里需要分开指定。  
+- **extensions** {String}  →  允许的文件后缀，不带点，多个用逗号分割。  
+- **mimeTypes** {String}  →  多个用逗号分割。  
+- **canDelete**  {Boolean}[可选] [默认值：undefined]  →  上传的文件是否可以删除（true的话，文件上传成功后会显示删除图标）。  
+- **fileSingleSizeLimit**   {int} [可选] [默认值：undefined]  →  验证单个文件大小是否超出限制, 超出则不允许加入队列。（其中ie9中文件大小前端限制不了，需要后端接口做限制）  
+- **allowNum**  {Boolean}[可选] [默认值：undefined]  →  允许上传的文件个数，上传的失败的文件会自动移除，移除后不算作内。  
+- **server**  {String}[必选]   →  后台上传接口，默认是post方法。  
 
 
-IUploader传入的函数说明：
-successOption	
-response对象
-接口上传成功的条件。内部需要用作判断，是移除文件还是展示文件。
+IUploader传入的函数说明：  
 
-uploadCallback
-response对象
-接口正常返回数据的回调函数，可做扩展。
-
-errorCallback	
-response对象
-接口失败后的回调函数，可做扩展。
-
-deleteCallback	
-附件id
-删除文件的时候的回调函数，可做扩展。
+ 函数名 | 类型 | 描述  
+ ---- | ----- | ------  
+**successOption**|response对象|接口上传成功的条件。内部需要用作判断，是移除文件还是展示文件。
+**uploadCallback**|response对象|接口正常返回数据的回调函数，可做扩展。  
+**errorCallback**|response对象 | 接口失败后的回调函数，可做扩展。  
+**deleteCallback**	|附件id | 删除文件的时候的回调函数，可做扩展。  
 
 另外提供一个可动态修改接口路径的方法：
 ``` javascript
