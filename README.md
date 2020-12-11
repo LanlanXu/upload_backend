@@ -1,5 +1,7 @@
 ## 上传组件——前后端不分离 简介参考下面地址：
-1、效果如图所示（仅支持一次一个上传；选择即马上上传）：【此demo兼容ie9-11；上传接口的响应头中的'Content-type'请设置为'text/html;charset=utf-8'】
+1、效果如图所示（仅支持一次一个上传；选择即马上上传）：【此demo兼容ie9-11；上传接口的响应头中的'Content-type'请设置为'text/html;charset=utf-8'】  
+![Image text](https://github.com/LanlanXu/upload_backend/blob/main/img.png)  
+
 ## 一、下载文件及运行demo：
 上传组件带简单接口的完整测试包文件见附件【upload_backend.zip】，目录结构如下：  
 │ index.js     // nodejs编写的服务器及后台上传接口  
