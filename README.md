@@ -102,7 +102,7 @@ var uploader = new IUploader({
 // uploader.changeServer('xxxxx');
 ```
 
-IUploader使用的参数说明：  
+### IUploader使用的参数说明：  
 - **$picker**  {Object} [必选]  →  指定选择文件的按钮容器的jquery对象。  
 - **$list**  {Object} [必选]   → 展示的文件列表的jquery对象。  
 - **accept**  {Object} [可选] [默认值：null]  →  指定接受哪些类型的文件。 由于目前还有ext转mimeType表，所以这里需要分开指定。  
@@ -113,8 +113,7 @@ IUploader使用的参数说明：
 - **allowNum**  {Boolean}[可选] [默认值：undefined]  →  允许上传的文件个数，上传的失败的文件会自动移除，移除后不算作内。  
 - **server**  {String}[必选]   →  后台上传接口，默认是post方法。  
 
-
-IUploader传入的函数说明：  
+### IUploader传入的函数说明：  
 
  函数名 | 类型 | 描述  
  ---- | ----- | ------  
@@ -122,6 +121,7 @@ IUploader传入的函数说明：
 **uploadCallback**|response对象|接口正常返回数据的回调函数，可做扩展。  
 **errorCallback**|response对象 | 接口失败后的回调函数，可做扩展。  
 **deleteCallback**	|附件id | 删除文件的时候的回调函数，可做扩展。  
+
 
 另外提供一个可动态修改接口路径的方法：
 ``` javascript
